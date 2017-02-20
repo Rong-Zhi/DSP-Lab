@@ -1,0 +1,16 @@
+clear;
+N=32;
+n=0:N-1;
+x=0.8*sin(0.2*pi*n);
+subplot(3,1,1);
+stem(n,x);
+M=16*N;
+w=2*pi*(0:1/M:1-1/M);
+X=fft(x,M);
+subplot(3,1,2);
+plot(w,abs(X));
+Xk=fft(x);
+N=length(Xk);
+wk=2*pi*(0:1/N:1-1/N);
+subplot(3,1,3);
+stem(wk,abs(Xk));

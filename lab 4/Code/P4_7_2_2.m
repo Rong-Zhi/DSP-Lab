@@ -1,0 +1,24 @@
+clear;
+wp=0.12*pi;
+ws=0.18*pi;
+wc=(ws+wp)/2;
+w=ws-wp;
+A=30;
+win=kwin(w,A);
+% % n=1:length(win);
+% % stem(n,win)
+N=length(win);
+h=firlp(N,wc).*win;
+figure;
+subplot(2,1,1);
+n=1:N;
+stem(n,h);
+xlabel('n');
+ylabel('h(n)');
+title('Impluse Response by Kaiser Window');
+subplot(2,1,2);
+[H,w]=freqz(h);
+plot(w/pi,20*log10(abs(H)));
+xlabel('Normalized Frequency(\times\pi rad/sample)');
+ylabel('Magnitude (dB)');
+title('Frequency Response by Kaiser Window');

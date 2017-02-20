@@ -1,0 +1,13 @@
+clear;
+clc;
+close all;
+Td=1;
+w=pi*(-0.9:0.01:0.9);
+omega=w/Td;
+Omega=tan(w/2)*2/Td;
+plot(w,omega,'r*',w,Omega,'g*');
+hold on;
+Td2=2;
+omega2=w/Td2;
+Omega2=tan(w/2)*2/Td2;
+plot(w,omega2,'b*',w,Omega2,'y*');

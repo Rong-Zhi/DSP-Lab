@@ -1,0 +1,12 @@
+clear;
+N=64;
+x=[1 zeros(1,N-1)];
+num=[0.008 -0.003 0.05 -0.003 0.008];
+den=[1 2.37 2.7 1.6 0.41];
+y=filter(num,den,x);
+figure(1);
+n=1:N;
+stem(n,y,'fill');grid on;title('graph 1');
+figure(2);
+Fs=1024;
+freqz(num,den,N,Fs);grid on;title('graph 2');
